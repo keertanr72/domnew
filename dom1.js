@@ -49,16 +49,6 @@ itemList.parentElement.style.backgroundColor = '#f4f4f4'
 console.log(itemList.children)
 console.log(itemList.firstElementChild  )
  */
-var form = document.getElementById('addForm')
-var itemList = document.getElementById('items')
-
-
-form.addEventListener('submit', addItem)
-
-function addItem(e){
-    e.perventDefault()
-    console.log('1')
-}
 
 var form = document.getElementById('addForm');
 var itemList = document.getElementById('items');
@@ -99,4 +89,31 @@ function addItem(e){
 
   // Append li to list
   itemList.appendChild(li);
+}
+
+// Remove item
+function removeItem(e){
+  if(e.target.classList.contains('delete')){
+    if(confirm('Are You Sure?')){
+      var li = e.target.parentElement;
+      itemList.removeChild(li);
+    }
+  }
+}
+
+// Filter Items
+function filterItems(e){
+  // convert text to lowercase
+  var text = e.target.value.toLowerCase();
+  // Get lis
+  var items = itemList.getElementsByTagName('li');
+  // Convert to an array
+  Array.from(items).forEach(function(item){
+    var itemName = item.firstChild.textContent;
+    if(itemName.toLowerCase().indexOf(text) != -1){
+      item.style.display = 'block';
+    } else {
+      item.style.display = 'none';
+    }
+  });
 }
