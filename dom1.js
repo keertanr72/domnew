@@ -7,7 +7,7 @@ items[2].style.backgroundColor = 'green'
 
 for(var i = 0; i < items.length; i++){
     items[i].style.fontWeight = 'bold'
-}*/
+}
 var header = document.querySelector('#main-header')
 header.getElementsByClassName.borderBottom = 'solid 4px #ccc'
 
@@ -39,6 +39,13 @@ var odd = document.querySelectorAll('li:nth-child(odd)')
 
 for(var i = 0; i < odd.length; i++){
     odd[i].style.backgroundColor = 'green'
-}
+}*/
 
+
+var itemList = document.querySelector('#items')
+console.log(itemList.parentNode)
+itemList.parentElement.style.backgroundColor = '#f4f4f4'
+
+console.log(itemList.children)
+console.log(itemList.firstElementChild  )
  
