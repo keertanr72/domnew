@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Page</title>
+</head>
+<body>
+    <form id="form1" onsubmit="submitfunction(event)">
+        <label for="price">Choose Price: </label>
+        <input type="text" id="price" name="price" value="320">
+        <label for="dish">Choose Dish: </label>
+        <input type="text" id="dish" name="dish" value="butter chicken">
+        <label for="table">Choose a table: </label>
+        <select name="tablelist" id="tablelist">
+            <option value="table1">Table 1</option>
+            <option value="table2">Table 2</option>
+            <option value="table3">Table 3</option>
+        </select>
+        <input type="submit" value="Submit">
+    </form>
+    <h2 id="t1">Table 1</h2><br>
+    <h2 id="t2">Table 2</h2><br>
+    <h2 id="t3">Table 3</h2>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.3.2/axios.min.js"></script>
+<script src="restaurant.js"></script>
+</html>
